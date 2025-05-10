@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>udv</name>
+    </assembly>
+    <members>
+        <member name="T:udv.Controllers.AnalyzeController">
+            <summary>
+            Контроллер для анализа информации о пользователях.
+            </summary>
+        </member>
+        <member name="M:udv.Controllers.AnalyzeController.#ctor(Service.Service.Abstraction.IUserPostInfoService,Microsoft.Extensions.Logging.ILogger{udv.Controllers.AnalyzeController},Service.Service.Abstraction.IUserIdService)">
+            <summary>
+            Контроллер для анализа информации о пользователях.
+            </summary>
+        </member>
+        <member name="M:udv.Controllers.AnalyzeController.AnalyzeUserPosts(System.String)">
+            <summary>
+            Анализирует посты пользователя по его идентификатору.
+            </summary>
+            <remarks>
+            Данный метод принимает только идентификатор пользователя.
+            screen_name пользователя, который у некоторых указан как ник в поисковой строке,
+            не учитывается в данном методе.
+            Если нужно получить id пользователя, используйте метод ниже
+            </remarks>
+            <param name="userId">Идентификатор пользователя.</param>
+            <returns>Информация о постах пользователя.</returns>
+            <response code="200">Возвращает информацию о постах пользователя.</response>
+            <response code="400">Если произошла ошибка при получении данных.</response>
+        </member>
+        <member name="M:udv.Controllers.AnalyzeController.GetId(System.String)">
+            <summary>
+            Получает идентификатор пользователя по его нику.
+            </summary>
+            <param name="screenName">Ник пользователя.</param>
+            <returns>Идентификатор пользователя.</returns>
+            <response code="200">Возвращает идентификатор пользователя.</response>
+            <response code="400">Если произошла ошибка при получении идентификатора.</response>
+        </member>
+    </members>
+</doc>
